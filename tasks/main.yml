@@ -67,7 +67,7 @@
         and mongodb_security_authorization == 'enabled'
         and mongodb_master is defined and mongodb_master )
   no_log: true
-  tags: [mongodb]
+  tags: [mongodb,mongodb-users]
 
 - name: create normal users without replicaset
   mongodb_user:
@@ -85,7 +85,7 @@
           and (not mongodb_replication_replset
           or mongodb_replication_replset == '') )
   no_log: true
-  tags: [mongodb]
+  tags: [mongodb,mongodb-users]
 
 - name: Include MMS Agent configuration
   include: mms-agent.yml
