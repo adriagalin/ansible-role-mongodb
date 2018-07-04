@@ -12,11 +12,11 @@
     mongodb_major_version: "{{ mongodb_version[0:3] }}"
 
 - name: Add systemd configuration if present
-  copy: src=mongodb.service dest=/lib/systemd/system/mongod.service owner=root group=root mode=0640
+  copy: src=mongod.service dest=/lib/systemd/system/mongod.service owner=root group=root mode=0640
   when: mongodb_is_systemd
 
 - name: Add symlink for systemd
-  file: src=/lib/systemd/system/mongodb.service dest=/etc/systemd/system/multi-user.target.wants/mongod.service state=link
+  file: src=/lib/systemd/system/mongod.service dest=/etc/systemd/system/multi-user.target.wants/mongod.service state=link
   when: mongodb_is_systemd
   notify: reload systemd
 
