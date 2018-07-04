@@ -20,9 +20,9 @@ MongoDB support matrix:
 | RHEL 6.x | :no_entry: | :interrobang: | :interrobang: | :interrobang: | :interrobang: |
 | RHEL 7.x | :no_entry: | :interrobang: | :interrobang: | :interrobang: | :interrobang: |
 
-:white_check_mark: - fully tested, should work fine  
-:interrobang: - will be added testing suite soon  
-:x: - don't have official support  
+:white_check_mark: - fully tested, should work fine
+:interrobang: - will be added testing suite soon
+:x: - don't have official support
 :no_entry: - does't have support, because used old format of configuration files
 
 #### Variables
@@ -49,7 +49,6 @@ mongodb_gid:
 mongodb_daemon_name: "{{ 'mongod' if ('mongodb-org' in mongodb_package) else 'mongodb' }}"
 ## net Options
 mongodb_net_bindip: 127.0.0.1                    # Comma separated list of ip addresses to listen on
-mongodb_net_http_enabled: false                  # Enable http interface
 mongodb_net_ipv6: false                          # Enable IPv6 support (disabled by default)
 mongodb_net_maxconns: 65536                      # Max number of simultaneous connections
 mongodb_net_port: 27017                          # Specify port number
@@ -89,7 +88,7 @@ mongodb_replication_oplogsize: 1024               # specifies a maximum size in 
 
 ## setParameter options
 # Configure setParameter option.
-# Example : 
+# Example :
 mongodb_set_parameters: { "enableLocalhostAuthBypass": "true", "authenticationMechanisms": "SCRAM-SHA-1,MONGODB-CR" }
 
 # MMS Agent
