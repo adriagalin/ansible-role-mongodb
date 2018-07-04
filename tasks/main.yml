@@ -56,8 +56,9 @@
     password: "{{ item.password }}"
     update_password: "{{ mongodb_user_update_password }}"
     roles: "{{ item.roles }}"
-    login_user: "{{ mongodb_user_admin_name }}"
-    login_password: "{{ mongodb_user_admin_password }}"
+    login_user: "{{ mongodb_root_admin_name }}"
+    login_password: "{{ mongodb_root_admin_password }}"
+    replica_set: "{{ mongodb_replication_replset }}"
     login_port: "{{ mongodb_login_port|default(27017) }}"
     login_host: "{{ mongodb_login_host|default('localhost') }}"
   with_items:
