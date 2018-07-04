@@ -66,3 +66,7 @@
 - name: Install PyMongo from PIP
   pip: name=pymongo state=latest
   when: mongodb_pymongo_from_pip
+
+- name: Install PyMongo from PIP
+  pip: name=pymongo version="{{ mongodb_pymongo_version }}"
+  when: mongodb_pymongo_from_pip
