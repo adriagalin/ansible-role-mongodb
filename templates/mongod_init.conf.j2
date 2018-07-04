@@ -2,8 +2,6 @@
 
 net:
   bindIp: '127.0.0.1'
-  http:
-    enabled: {{ mongodb_net_http_enabled | to_nice_json }}
   ipv6: {{ mongodb_net_ipv6 | to_nice_json }}
   maxIncomingConnections: {{ mongodb_net_maxconns }}
   port: {{ mongodb_net_port }}
@@ -13,7 +11,7 @@ processManagement:
   {% if mongodb_pidfile_path is defined and mongodb_pidfile_path != '' -%}
   pidFilePath: {{ mongodb_pidfile_path }}
   {% endif %}
-  
+
 security:
   authorization: 'disabled'
 
